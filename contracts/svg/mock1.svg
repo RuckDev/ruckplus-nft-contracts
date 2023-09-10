@@ -1,0 +1,8 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card body -->
+  <rect x="128.5" y="175" width="255" height="162" fill="white" rx="5" ry="5" />
+  <!-- Card logo -->
+  <text x="256" y="256" font-size="23" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="middle">RuckPlus</text>
+  <!-- Card serial number -->
+  <text x="155" y="195" font-size="10" fill="black" text-anchor="middle" dominant-baseline="middle">ID: 1</text>
+</svg>
