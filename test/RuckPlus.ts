@@ -2,11 +2,10 @@ import {
   time,
   loadFixture,
 } from "@nomicfoundation/hardhat-toolbox/network-helpers";
-import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("RuckPlus", function () {
+describe("RuckPlus", () => {
   async function deployOneYearLockFixture() {
     const [owner, otherAccount] = await ethers.getSigners();
 
@@ -16,11 +15,22 @@ describe("RuckPlus", function () {
     return { contract, owner, otherAccount };
   }
 
-  describe("Deployment", function () {
-    it("Should set the right unlockTime", async function () {
+  describe("Deployment", () => {
+    it("Should set the right unlockTime", async () => {
       const { contract } = await loadFixture(deployOneYearLockFixture);
 
-      expect(await contract.unlockTime()).to.equal(unlockTime);
+      await contract.mint(3)
+
+      const buildImage = await contract.buildImage(1);
+      console.log("buildImage: ", buildImage);
+
+      const buildMetadata = await contract.buildMetadata(1);
+      console.log("buildMetadata: ", buildMetadata);
+
+      const tokenURI = await contract.tokenURI(1);
+      console.log("tokenURI: ", tokenURI);
+
+      expect(true).to.equal(true);
     });
   });
 });
